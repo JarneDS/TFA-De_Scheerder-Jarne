@@ -1,11 +1,12 @@
 "use strict";
 
-/*Code repris des codes aides fait avec Monsieur Thronte*/
-var btnTheme = document.querySelector(".btn--darkMode");
+/* Code repris des codes aides fait avec Monsieur Thronte adapté pour le code de mon projet */
+var btnTheme = document.querySelector(".switch");
 
-btnTheme.addEventListener("click", themeSelect);
+btnTheme.addEventListener("change", themeSelect);
 
 function themeSelect(){
+    console.log("color")
     var currentMode = document.body.getAttribute("data-theme");
     var systemThemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     if((!currentMode && systemThemeDark) || currentMode == "dark"){

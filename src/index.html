@@ -15,8 +15,10 @@
   <script src="scripts/app.js" defer></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Sriracha&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Sriracha&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/vnd.icon" href="./assets/images/favico.ico">
 </head>
 <body id="top">
 
@@ -29,7 +31,13 @@
       <li class="menu__li"><a class="menu__a" href="#designFiction">Design Fiction</a></li>
       <li class="menu__li"><a class="menu__a" href="">Crédits</a></li>
     </ul>
-    <button class="btn--darkMode">Change mode</button>
+    <div class="darkModeSwitch">
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+      <p class="switch__p">Dark mode</p>
+    </div>
   </nav>
   <h1>Bonjour ! Je suis Jarne.</h1>
   <p class="orange">Étudiant en Web Design à la Haute École Albert Jacquard</p>
@@ -41,6 +49,53 @@
       <p>Développeur front-end * Développeur back-end *</p>
     </div>
   </div>
+  <section>
+    <img src="" alt="photo de moi, Jarne De Scheerder">
+    <h3>Jarne De Scheerder</h3>
+    <p>Je suis un jeune étudiant en dernière année, travailleur et capable de respecter les délais.
+      J'aime les nouveaux défis et je suis capable de
+      gérer un projet de A à Z, de la création du visuelle de l’interface web au codage de la page.</p>
+  </section>
+  <img src="" alt="separateur">
+  <section>
+    <h2>Mes Case Study</h2>
+    <div>
+      <h4>Le projet RUX</h4>
+      <img src="" alt="image de l'acceuil du projet de Rethinking UX">
+      <p><span>En lien avec le cours de Rethinking UX (RUX), nous avons réalisé un Case Study.</span> <span>Afin de réaliser ce projet, nous avons commencé par la répartition des tâches. De mon côté, j’ai pris en charge les recherches concernant les peintures, les sources d’inspiration, ainsi que les alternatives au cas où la peinture ne serait pas validée par la direction de l’école.</span> <span>Pour finaliser le projet dans le cadre du cours, donc sans faire les peintures en pratique, nous avons tous de notre côté du faire un site internet. Sur celui-ci nous sommes parti du même Case Study que le groupe à réalisé en l’adaptant un peu si nécessaire.</span></p>
+      <button class="button__savoirPlus">En savoir plus</button>
+    </div>
+    <div>
+      <h4>Le projet DataPlay</h4>
+      <img src="" alt="image de l'acceuil du projet de DataPlay">
+      <p><span>En lien avec les cours de PRCO, nous avons réalisé un site interactif reprenant les crashs d’avions de 2012 à 2022.</span> <span>Afin de réaliser ce projet, nous avons commencé par la répartition des tâches. Personnellement, je me suis occupé de la partie JavaScript et de la partie correction de bug et de problèmes de mise en page en corrigeant le SCSS là où il y avait besoin.</span> <span>Pour en savoir plus sur ce projet, son Case Study et les détailles de ce projet, n’hésitez pas à cliquer sur cette section.</span></p>
+      <button class="button__savoirPlus">En savoir plus</button>
+    </div>
+  </section>
+  <section>
+    <h2>Design Fiction</h2>
+    <div>
+      <p>Dans le cadre du cours de Design Visuel - Design Fiction, j’ai réalisé un “What if” disant “Et si chacun doit produire de l’électricité pour la communauté ?”. Dans ce cas, j’ai décidé de raconté une petite histoire du déroulement de cette catastrophe. Tout commence en 2038, un mardi ensoleillé comme un autre, quand soudain un orage magnétique mondial fasse disparaitre toutes nos sources d’électricité.</p>
+      <button class="button__savoirPlusFiction">En savoir plus</button>
+    </div>
+    <img src="" alt="">
+  </section>
+  <footer>
+    <div>
+      <h4>Me contacter ?</h4>
+      <p>+32 472 97 18 61</p>
+      <p>descheerderjarne@gmail.com</p>
+    </div>
+    <a href="">Sources et crédits</a>
+    <button class="backToTop"></button>
+    <div class="socials">
+      <a href=""><img src="" alt="Lien vers mon LinkedIn"></a>
+      <a href=""><img src="" alt="Lien vers mon Instagram"></a>
+      <a href=""><img src="" alt="Lien vers mon Facebook"></a>
+      <a href=""><img src="" alt="Lien vers mon GitHub"></a>
+    </div>
+    <span>Editor : &#169; De Scheerder Jarne 2024-2025</span>
+  </footer>
 
 </body>
 </html>
