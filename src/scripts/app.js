@@ -26,8 +26,12 @@ if(activeTheme){
 /* menu */
 
 var menuBtn = document.querySelector(".menu__btn");
+var menuElements = document.querySelectorAll("#bonjour, #caseStudy, #designFiction");
 
 menuBtn.addEventListener("click", toggleMenu);
+menuElements.forEach((element) => {
+    element.addEventListener("click", toggleMenu);
+});
 
 function toggleMenu() {
     var menu = document.querySelector(".menu");
