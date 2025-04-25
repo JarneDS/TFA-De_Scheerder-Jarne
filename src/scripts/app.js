@@ -26,7 +26,7 @@ if(activeTheme){
 /* menu */
 
 var menuBtn = document.querySelector(".menu__btn");
-var menuElements = document.querySelectorAll("#bonjour, #caseStudy, #designFiction");
+var menuElements = document.querySelectorAll(".menu__li");
 
 menuBtn.addEventListener("click", toggleMenu);
 menuElements.forEach((element) => {
