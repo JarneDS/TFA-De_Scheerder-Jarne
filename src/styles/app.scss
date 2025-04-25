@@ -55,6 +55,12 @@ html {
     scroll-behavior: smooth;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 #bonjour, #caseStudy, #designFiction {
     padding-top: 70px;
     margin: -70px 23px 0;
@@ -211,57 +217,41 @@ body{
 .menu--open .menuDark {
     transform: translateX(0);
 }
-
-// texte défile
-.separateur__img {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-}
-
+/*
+// texte défile//
 .defiletext {
     display: flex;
     align-items: center;
     overflow: hidden;
-    position: absolute;
+    position: relative;
     z-index: 20;
-    width: 100vw;
-    height: 166px;
-    background-repeat: no-repeat;
-    background-size: 100vw;
-    margin: 0;
-    padding: 0;
-    background-image: url(../assets/images/separateur1.png);
+    width: 100%;
 }
 
 .defiletext__inner {
     display: flex;
-    flex-direction: row;
-    animation: textdefile 25s linear infinite;
+    white-space: nowrap;
+    animation: textdefile 10s linear infinite;
     gap: 8px;
-    transform: rotateZ(-2deg);
-}
-
-.defiletext__p {
-    width: 100%;
 }
 
 @keyframes textdefile { 
     0% {
-        transform: translateX(100%); 
+        transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%); 
+        transform: translateX(-50%);
     }
-}
+}*/
+
 
 footer {
-    position: relative;
+    background-color: var(--color-secondary);
     background-image: url(../assets/images/footer.png);
     background-repeat: no-repeat;
     width: 100vw;
     height: 376px;
-    z-index: 5;
+    z-index: 10;
     margin: 0;
     color: var(--color-offset);
 }
@@ -278,6 +268,7 @@ footer {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    align-items: end;
 }
 
 .socials {
@@ -285,6 +276,7 @@ footer {
     flex-direction: column;
     justify-content: end;
     align-items: end;
+    gap: 25px;
 }
 
 .socials__img {
@@ -442,11 +434,11 @@ img {
 }
 
 #designFiction {
-    position: absolute;
+    flex: 1;
     background-color: var(--color-secondary);
     margin: 0;
     padding: 23px;
-    padding-bottom: 376px;
+    z-index: 5;
 }
 
 .designFiction__text {
