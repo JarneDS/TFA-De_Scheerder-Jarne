@@ -25,6 +25,9 @@ h1 {
 h2 {
     font-family: "Shrikhand", serif;
     font-size: clamp(2.25rem, 1.795vw + 1.846rem, 4rem);
+    border: #DF8600 dashed 2px;
+    width: 100%;
+    text-align: center;
 }
 
 h3 {
@@ -37,9 +40,15 @@ h4{
     font-size: clamp(1.75rem, 0.513vw + 1.635rem, 2.25rem);
 }
 
-p, li {
+p, li, button {
     font-family: "Sriracha", cursive;
     font-size: clamp(1rem, 0.128vw + 0.971rem, 1.125rem);
+}
+
+.editor {
+    font-family: "Sriracha", cursive;
+    font-size: clamp(0.875rem, 0.256vw + 0.817rem, 1.125rem);
+    margin: 40px 0 23px;
 }
 
 html {
@@ -47,35 +56,26 @@ html {
 }
 
 #bonjour, #caseStudy, #designFiction {
-    padding-top: 90px;
-    margin-top: -90px;
+    padding-top: 70px;
+    margin: -70px 23px 0;
 }
 
-.separateurs1, .separateurs2 {
-    height: fit-content;
-    width: 100vw;
+.bonjour__img {
+    margin-top: 70px;
+    border-radius: 20px;
 }
 
-.separateur3 {
+.bonjour__h3 {
+    color: rgba(0, 0, 0, 0.50)
+}
+
+.separateurs2 {
     position: absolute;
-    background-color: var(--color-primary);
-    clip-path: path("M457 26.2049C345.72 -8.74904 40.3333 7.0509 -101 26.2049V76.3769C70 63.7982 451.905 60.6438 624 95.0307C792.5 128.699 1280.67 101.392 1920 76.3769V10.7673C1439.8 -16.3343 1263.5 14.9127 1173.5 26.205C985.833 50.5049 570 61.6991 457 26.2049Z");
-    margin: 15px 0 0;
-    padding: 60px 0;
+    background-image: url(../assets/images/separateur2.png);
+    background-repeat: no-repeat;
     width: 100%;
-    height: 100%;
+    height: 126px;
     z-index: 5;
-}
-
-.separateur4 {
-    position: absolute;
-    background-color: var(--color-secondary);
-    clip-path: path("M457 26.2049C345.72 -8.74904 40.3333 7.0509 -101 26.2049V76.3769C70 63.7982 451.905 60.6438 624 95.0307C792.5 128.699 1280.67 101.392 1920 76.3769V10.7673C1439.8 -16.3343 1263.5 14.9127 1173.5 26.205C985.833 50.5049 570 61.6991 457 26.2049Z");
-    margin: 0;
-    padding: 60px 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
 }
   
 // Dark Mode
@@ -84,6 +84,7 @@ html {
     --color-text: #000;
     --color-primary: #005866;
     --color-secondary: #FFB038;
+    --color-thirdly: #C6E6F8;
 }
 
 @media (prefers-color-scheme: dark){
@@ -224,9 +225,13 @@ body{
     overflow: hidden;
     position: absolute;
     z-index: 20;
-    width: 100%;
-    margin-top: 70px;
-    transform: rotateZ(-2deg);
+    width: 100vw;
+    height: 166px;
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    margin: 0;
+    padding: 0;
+    background-image: url(../assets/images/separateur1.png);
 }
 
 .defiletext__inner {
@@ -234,6 +239,7 @@ body{
     flex-direction: row;
     animation: textdefile 25s linear infinite;
     gap: 8px;
+    transform: rotateZ(-2deg);
 }
 
 .defiletext__p {
@@ -247,6 +253,42 @@ body{
     100% {
         transform: translateX(-100%); 
     }
+}
+
+footer {
+    position: relative;
+    background-image: url(../assets/images/footer.png);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 376px;
+    z-index: 5;
+    margin: 0;
+    color: var(--color-offset);
+}
+
+.footer__elements {
+    margin: 0 23px;
+}
+
+.contact {
+    padding-top: 20px;
+}
+
+.sociaux {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+}
+
+.socials__img {
+    width: 25px;
 }
 
 // slider
@@ -348,6 +390,67 @@ span {
     display: block;
     margin: 12px 0;
     margin-bottom: 27px;
+}
+
+img {
+    width: 100%;
+}
+
+#caseStudy {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+#caseStudy h2 {
+    margin-top: 120px;
+}
+
+.RUX {
+    background-color: var(--color-thirdly);
+    border-radius: 10px;
+    padding: 1px 26px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dataPlay {
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    padding: 1px 26px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-offset);
+    margin-bottom: 40px;
+}
+
+.button__savoirPlus {
+    background-color: var(--color-secondary);
+    border-radius: 70px;
+    width: fit-content;
+    border: none;
+    padding: 14px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.button__savoirPlus:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+}
+
+#designFiction {
+    position: absolute;
+    background-color: var(--color-secondary);
+    margin: 0;
+    padding: 23px;
+    padding-bottom: 376px;
+}
+
+.designFiction__text {
+    margin: 50px;
 }
 
 /* VERSION TABLETTE */
