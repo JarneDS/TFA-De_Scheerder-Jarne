@@ -1,0 +1,5 @@
+Bonjour bienvenue dans le fichier qui contient les sources pour l'examen de Juin 2025.
+
+Colorisation des icones des médias sociaux dans le footer lors de l'hover :
+https://stackoverflow.com/questions/29280817/is-there-any-way-to-colorize-a-white-png-image-with-css-only
+
