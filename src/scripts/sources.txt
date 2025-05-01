@@ -3,3 +3,28 @@ Bonjour bienvenue dans le fichier qui contient les sources pour l'examen de Juin
 Colorisation des icones des médias sociaux dans le footer lors de l'hover :
 https://stackoverflow.com/questions/29280817/is-there-any-way-to-colorize-a-white-png-image-with-css-only
 
+Copier mais modifier le code pour avoir le switch du dark mode
+https://codepen.io/cortez/pen/jOrNGGQ
+
+code JS repris du code fait lors du cours de Monsieur Thronte avec modifications pour aller avec mon code
+var btnTheme = document.querySelector(".switch");
+
+btnTheme.addEventListener("change", themeSelect);
+
+function themeSelect(){
+    console.log("color")
+    var currentMode = document.body.getAttribute("data-theme");
+    var systemThemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if((!currentMode && systemThemeDark) || currentMode == "dark"){
+        document.body.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+    } else{
+        document.body.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+    }
+}
+
+var activeTheme = localStorage.getItem("theme");
+if(activeTheme){
+    document.body.setAttribute("data-theme", activeTheme);
+}
