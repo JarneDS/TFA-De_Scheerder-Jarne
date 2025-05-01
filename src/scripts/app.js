@@ -23,6 +23,8 @@ if(activeTheme){
     document.body.setAttribute("data-theme", activeTheme);
 }
 
+/* fin du code repris */
+
 /* menu */
 
 var menuBtn = document.querySelector(".menu__btn");
@@ -37,3 +39,11 @@ function toggleMenu() {
     var menu = document.querySelector(".menu");
     menu.classList.toggle("menu--open");
 };
+
+var backToTopButton = document.querySelector(".backToTop");
+
+backToTopButton.addEventListener("click", backToTop);
+
+function backToTop(){
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
