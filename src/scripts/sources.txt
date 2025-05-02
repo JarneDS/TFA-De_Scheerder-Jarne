@@ -28,3 +28,71 @@ var activeTheme = localStorage.getItem("theme");
 if(activeTheme){
     document.body.setAttribute("data-theme", activeTheme);
 }
+
+
+Question a Copilot pour savoir mon code ne fonctionnait pas :
+
+how to make this work ?
+var sideNavOpen = document.querySelector(".sideNav");
+sideNavOpen.addEventListener("toggle", toggleSideNav);
+function toggleSideNav() {
+    if (window.innerWidth >= 1250){
+        sideNavOpen.classList.add("active");
+    } else {
+        sideNavOpen.classList.remove("active");
+    }
+}
+
+réponse :
+Your code is trying to listen for a "toggle" event, but the "toggle" event is not a standard event for general elements like .sideNav. Instead, you might want to trigger this function based on a user interaction, such as clicking a button.
+
+Try using a "click" event instead:
+
+javascript
+var sideNavOpen = document.querySelector(".sideNav");
+
+sideNavOpen.addEventListener("click", toggleSideNav);
+
+function toggleSideNav() {
+    if (window.innerWidth >= 1250) {
+        sideNavOpen.classList.toggle("active");
+    } else {
+        sideNavOpen.classList.remove("active");
+    }
+}
+If you actually meant to open the sidebar when clicking a different button, replace sideNavOpen in document.querySelector with the selector for that button.
+
+Let me know if this needs further fine-tuning!
+
+je lui répond :
+ok but I don't want any interaction of the user, I want that it listens to the width of the window and if it is above or egal to 1250px in width. Than it shows the sideNav but if it is less than 1250px in width, than it doesn't show
+
+il me donne :
+Got it! Since you want the .sideNav to automatically show or hide depending on the window width without any user interaction, you can use the resize event to listen for changes in window size and adjust the visibility accordingly.
+
+Here's the updated code:
+
+javascript
+var sideNav = document.querySelector(".sideNav");
+
+function toggleSideNav() {
+    if (window.innerWidth >= 1250) {
+        sideNav.classList.add("active");
+    } else {
+        sideNav.classList.remove("active");
+    }
+}
+
+// Run the function on page load to ensure the correct state is set initially
+toggleSideNav();
+
+// Listen for window resize events and update visibility accordingly
+window.addEventListener("resize", toggleSideNav);
+Explanation:
+The function toggleSideNav() checks the window width and adds or removes the "active" class based on the condition (>= 1250px).
+
+It runs immediately when the page loads to ensure correct styling from the start.
+
+It listens for resize events so that whenever the window is resized, it updates the visibility dynamically.
+
+This should now work exactly as you envisioned! 🎯 Let me know if you need further refinements. 🚀

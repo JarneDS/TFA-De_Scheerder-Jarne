@@ -40,6 +40,8 @@ function toggleMenu() {
     menu.classList.toggle("menu--open");
 };
 
+/* Back to top */
+
 var backToTopButton = document.querySelector(".backToTop");
 
 backToTopButton.addEventListener("click", backToTop);
@@ -47,3 +49,24 @@ backToTopButton.addEventListener("click", backToTop);
 function backToTop(){
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
+/* Side nav */
+
+var sideNav = document.querySelector(".sideNav");
+
+function toggleSideNav() {
+    if (window.innerWidth >= 1250){
+        sideNav.classList.remove("invisible");
+    }
+    else {
+        sideNav.classList.add("invisible");
+    }
+}
+
+/* Provient de copilot, discussion dans sources.txt */
+
+// Run the function on page load to ensure the correct state is set initially
+toggleSideNav();
+
+// Listen for window resize events and update visibility accordingly
+window.addEventListener("resize", toggleSideNav);

@@ -83,6 +83,44 @@ html, body {
     height: 126px;
     z-index: 5;
 }
+
+// Side Nav
+.invisible {
+    display: none;
+}
+
+.sideNav {
+    background-color: var(--color-secondary);
+    width: fit-content;
+    margin: 0;
+    padding: 20px 20px 18px;
+    border-radius: 50px;
+    position: fixed;
+    right: 23px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.sideNav__elements {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.sideNav__li {
+    list-style: none;
+    text-decoration: none;
+}
+
+.sideNav__li svg {
+    width: 25px;
+    cursor: pointer;
+}
   
 // Dark Mode
 :root{
@@ -150,6 +188,7 @@ body{
     display: flex;
     z-index: 20;
     margin-left: 23px;
+    cursor: pointer;
 }
 
 .menu__img {
@@ -693,7 +732,7 @@ img {
 
     .defiletext {
         transform: rotate(-1deg);
-        width: 100%;
+        width: 99%;
     }
 
     .separateurText {
