@@ -6,22 +6,35 @@ var btnTheme = document.querySelector(".switch");
 btnTheme.addEventListener("change", themeSelect);
 
 function themeSelect(){
-    console.log("color")
     var currentMode = document.body.getAttribute("data-theme");
     var systemThemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     if((!currentMode && systemThemeDark) || currentMode == "dark"){
         document.body.setAttribute("data-theme", "light");
         localStorage.setItem("theme", "light");
+    
     } else{
         document.body.setAttribute("data-theme", "dark");
         localStorage.setItem("theme", "dark");
     }
 }
 
+/* code de Copilot pour que quand le thème du browser est dark, que le switch affiche que le mode dark est allumé */
+/* comment est-ce que je peux ajouter le fait que quand la couleur système est dark que le input devient input:checked ? */
 var activeTheme = localStorage.getItem("theme");
 if(activeTheme){
     document.body.setAttribute("data-theme", activeTheme);
 }
+
+var systemThemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+var activeTheme = localStorage.getItem("theme");
+var themeSwitch = document.querySelector(".switch input");
+
+if ((systemThemeDark && !activeTheme) || activeTheme === "dark") {
+    themeSwitch.checked = true;
+} else {
+    themeSwitch.checked = false;
+}
+
 
 /* fin du code repris */
 
