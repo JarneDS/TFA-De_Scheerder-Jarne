@@ -40,7 +40,7 @@ h4{
     font-size: clamp(1.75rem, 0.513vw + 1.635rem, 2.25rem);
 }
 
-p, li, button, .credits {
+p, li, button, .credits, code {
     font-family: "Sriracha", cursive;
     font-size: clamp(1rem, 0.128vw + 0.971rem, 1.125rem);
 }
@@ -260,7 +260,8 @@ body{
     flex-direction: row;
     gap: 10px;
     align-items: center;
-
+    background-color: transparent;
+    border: none;
 }
 
 .menu--open .menuDark {
@@ -431,10 +432,46 @@ footer {
     align-self: center;
     transition: all .3s;
     width: fit-content;
+    background-color: transparent;
+    border: none;
 }
 
 .credits:hover, .contact__p:hover {
     color: var(--color-secondary);
+}
+
+.credits__section {
+    display: none;
+    position: absolute;
+    background-color: var(--color-thirdly);
+    margin: 0 4%;
+    padding: 1px 23px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: var(--color-text);
+    top: 14px;
+    bottom: 14px;
+    z-index: 1000;
+    max-height: 100vh;
+    overflow: scroll;
+}
+
+.credits__section--active {
+    display: block;
+}
+
+.close {
+    background-color: transparent;
+    border: none;
+    margin-top: 23px;
+    border-radius: 10px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.close:hover {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
 }
 
 /* code de https://stackoverflow.com/questions/29280817/is-there-any-way-to-colorize-a-white-png-image-with-css-only */
@@ -637,7 +674,7 @@ img {
 
 /* VERSION TABLETTE */
 @media (min-width: 780px) {
-    p {
+    p, code {
         width: 440px;
     }
 

@@ -76,10 +76,35 @@ function toggleSideNav() {
     }
 }
 
-/* Provient de copilot, discussion dans sources.txt */
+/* Provient de copilot, discussion dans credits */
 
 // Run the function on page load to ensure the correct state is set initially
 toggleSideNav();
 
 // Listen for window resize events and update visibility accordingly
 window.addEventListener("resize", toggleSideNav);
+/* fin code provenant de Copilot */
+
+const btnCredits = document.querySelector(".credits");
+const btnFermee = document.querySelectorAll(".close");
+const creditsBlock = document.querySelector(".credits__section");
+
+btnCredits.addEventListener("click", openCredits);
+btnFermee.forEach((btn) => {
+    btn.addEventListener("click", closeCredits);
+});
+
+
+function openCredits() {
+    creditsBlock.classList.add("credits__section--active");
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+    document.body.style.overflow = "hidden";
+}
+
+function closeCredits() {
+    creditsBlock.classList.remove("credits__section--active");
+    document.body.style.overflow = "";
+}
