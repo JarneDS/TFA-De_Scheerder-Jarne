@@ -106,17 +106,39 @@
     <section id="caseStudy">
       <h2>Mes Case Study</h2>
       <div class="caseStudy__blocs">
-        <div class="RUX">
-          <h4>Le projet RUX</h4>
-          <img src="assets/images/RUX.png" alt="image de l'acceuil du caseStudy de Rethinking UX">
-          <p><span>En lien avec le cours de Rethinking UX (RUX), nous avons réalisé un Case Study.</span> <span>Afin de réaliser ce projet, nous&nbsp;avons commencé par la répartition des tâches. De mon côté, j’ai pris en charge les recherches concernant les peintures, les sources d’inspiration, ainsi que les alternatives au cas où la peinture ne serait pas validée par la direction de l’école.</span> <span>Pour finaliser le projet dans le cadre du cours, donc sans faire les peintures en pratique, nous avons tous de notre côté du faire un site internet. Sur celui-ci nous sommes parti du même Case Study que le groupe à réalisé en l’adaptant un peu si&nbsp;nécessaire.</span></p>
-          <a href="https://jarnedescheerder.be/projets/rethinking-ux/" target="_blank"><button class="button__savoirPlus">En savoir plus	&#x27A1;</button></a>
+        <div class="wrapper">
+          <div class="card">
+            <div class="front-page__RUX">
+              <div class="card-info__RUX">
+                <h4 class="card__title">Le projet RUX</h4>
+                <img class="card__img" src="assets/images/RUX.png" alt="image de l'acceuil du caseStudy de Rethinking UX">
+                <p class="card__p">Cliquez pour voir plus</p>
+              </div>
+            </div>
+            <div class="back-page__RUX">
+              <div class="card-content">
+                <p><span>En lien avec le cours de Rethinking UX (RUX), nous avons réalisé un Case Study.</span> <span>Afin de réaliser ce projet, nous&nbsp;avons commencé par la répartition des tâches. De mon côté, j’ai pris en charge les recherches concernant les peintures, les sources d’inspiration, ainsi que les alternatives au cas où la peinture ne serait pas validée par la direction de l’école.</span> <span>Pour finaliser le projet dans le cadre du cours, donc sans faire les peintures en pratique, nous avons tous de notre côté du faire un site internet. Sur celui-ci nous sommes parti du même Case Study que le groupe à réalisé en l’adaptant un peu si&nbsp;nécessaire.</span></p>
+                <a href="https://jarnedescheerder.be/projets/rethinking-ux/" target="_blank"><button class="button__savoirPlus">En savoir plus	&#x27A1;</button></a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="dataPlay">
-          <h4>Le projet DataPlay</h4>
-          <img src="assets/images/dataPlay.png" alt="image de l'acceuil du projet de DataPlay">
-          <p><span>En lien avec les cours de PRCO, nous&nbsp;avons réalisé un site interactif reprenant les crashs d’avions de 2012 à 2022.</span> <span>Afin de réaliser ce projet, nous avons commencé par la répartition des tâches. Personnellement, je me suis occupé de la partie JavaScript et de la partie correction de bug et de problèmes de mise en page en corrigeant le SCSS là où il y avait&nbsp;besoin.</span></p>
-          <a href="https://jarnedescheerder.be/projets/dataplay_CaseStudy/" target="_blank"><button class="button__savoirPlus">En savoir plus	&#x27A1;</button></a>
+        <div class="wrapper">
+          <div class="card">
+            <div class="front-page__dataPlay">
+              <div class="card-info__dataPlay">
+                <h4 class="card__title">Le projet DataPlay</h4>
+                <img class="card__img" src="assets/images/dataPlay.png" alt="image de l'acceuil du projet de DataPlay">
+                <p class="card__p">Cliquez pour voir plus</p>
+              </div>
+            </div>
+            <div class="back-page__dataPlay">
+              <div class="card-content">
+                <p><span>En lien avec les cours de PRCO, nous&nbsp;avons réalisé un site interactif reprenant les crashs d’avions de 2012 à 2022.</span> <span>Afin de réaliser ce projet, nous avons commencé par la répartition des tâches. Personnellement, je me suis occupé de la partie JavaScript et de la partie correction de bug et de problèmes de mise en page en corrigeant le SCSS là où il y avait&nbsp;besoin.</span></p>
+                <a href="https://jarnedescheerder.be/projets/dataplay_CaseStudy/" target="_blank"><button class="button__savoirPlus">En savoir plus	&#x27A1;</button></a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -228,6 +250,62 @@
       <span>This should now work exactly as you envisioned! 🎯 Let me know if you need further refinements. 🚀</span></p>
       <p>L'inspiration pour la création de ce portfolio : <a href="https://www.pinterest.com/descheerderjarne/site-portfolio/" target="_blank">Pinterest</a></p>
       <p>Pour la partie about me : <a href="https://www.ionos.fr/digitalguide/sites-internet/creation-de-sites-internet/page-a-propos-de-moi/" target="_blank">Ionos</a></p>
+      
+      <h3>Reprise d'un code provenant de MZcode01 sur Telegram</h3>
+      <p>Lien vers le site de MZcode01 : <a href="https://mzcode01.com/" target="_blank">MZcode01</a></p>
+      <code>
+        <span>.wrapper{</span>
+            <span>perspective: 3000px;</span>
+        <span>}</span>
+        <span>.card{</span>
+            <span>width: 360px;</span>
+            <span>height: 530px;</span>
+            <span>transform-style: preserve-3d;</span>
+            <span>transition: transform .8s ease-in-out;</span>
+            <span>cursor: pointer;</span>
+            <span>border: 1px solid #ccc;</span>
+            <span>box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),</span>
+            <span>-5px -5px 10px rgba(0, 0, 0, 0.05);</span>
+            <span>border-radius: 15px;</span>
+        <span>}</span>
+        <span>.card:hover{</span>
+            <span>transform: rotateY(180deg);</span>
+        <span>}</span>
+        <span>.front-page,</span>
+        <span>.back-page{</span>
+            <span>position: absolute;</span>
+            <span>width: 100%;</span>
+            <span>height: 100%;</span>
+            <span>backface-visibility: hidden;</span>
+            <span>border-radius: 15px;</span>
+        <span>}</span>
+        <span>.front-page{</span>
+            <span>background-image: url(image.jpg);</span>
+            <span>background-size: cover;</span>
+        <span>}</span>
+        <span>.card-info{</span>
+            <span>position: absolute;</span>
+            <span>bottom: 50px;</span>
+            <span>left: 45px;</span>
+            <span>color: #fff;</span>
+            <span>text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);</span>
+            <span>text-align: center;</span>
+        <span>}</span>
+        <span>.back-page{</span>
+            <span>background-color: #1e272e;</span>
+            <span>color: #fff;</span>
+            <span>display: flex;</span>
+            <span>justify-content: center;</span>
+            <span>align-items: center;</span>
+            <span>transform: rotateY(180deg);</span>
+            <span>box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);</span>
+        <span>}</span>
+        <span>.card-content{</span>
+            <span>text-align: center;</span>
+            <span>padding: 20px;</span>
+            <span>max-width: 300px;</span>
+        <span>}</span>
+      </code>
       <button class="close">Fermer</button>
     </section>
   </main>

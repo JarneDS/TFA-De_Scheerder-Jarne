@@ -609,30 +609,102 @@ img {
     margin-top: 120px;
 }
 
+/* code de telegram par t.me/mzcode01*/
+.wrapper{
+    perspective: 3000px;
+}
+.card{
+    width: 314px;
+    height: 625px;
+    transform-style: preserve-3d;
+    transition: transform .8s ease-in-out;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+    -5px -5px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+}
+.card:hover{
+    transform: rotateY(180deg);
+}
+.front-page__RUX, .front-page__dataPlay,
+.back-page__RUX, .back-page__dataPlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+}
+.front-page__RUX, .front-page__dataPlay{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.front-page__RUX {
+    background-color: var(--color-thirdly);
+}
+
+.front-page__dataPlay {
+    background-color: var(--color-primary);
+}
+
+.card-info__RUX, .card-info__dataPlay{
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.card-info__RUX {
+    color: var(--color-text);
+}
+
+.card-info__dataPlay {
+    color: var(--color-offset);
+}
+
+.back-page__RUX, .back-page__dataPlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.back-page__RUX {
+    color: var(--color-text);
+    background-color: var(--color-thirdly);
+}
+
+.back-page__dataPlay {
+    color: var(--color-offset);
+    background-color: var(--color-primary);
+}
+
+.card-content{
+    text-align: center;
+    padding: 23px;
+}
+
+.card__img {
+    width: 90%;
+}
+
+.card__title {
+    margin: 0;
+    margin-bottom: 44px;
+}
+
+.card__p {
+    width: 100%;
+}
+
+/* fin code de telegram */
+
 .caseStudy__blocs {
     display: flex;
     flex-direction: column;
     gap: 23px;
-}
-
-.RUX {
-    background-color: var(--color-thirdly);
-    border-radius: 10px;
-    padding: 1px 26px 26px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.dataPlay {
-    background-color: var(--color-primary);
-    border-radius: 10px;
-    padding: 1px 26px 26px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--color-offset);
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .button__savoirPlus {
@@ -698,6 +770,10 @@ img {
 
 /* VERSION PC/DESKTOP */
 @media (min-width: 1250px) and (max-width: 1920px) {
+    .card{
+        width: 486px;
+        height: 496px;
+    }
     .menu {
         display: flex;
         flex-direction: row;
@@ -815,7 +891,6 @@ img {
 
     .caseStudy__blocs {
         flex-direction: row;
-        height: 900px;
         margin-bottom: 106px;
     }
 
