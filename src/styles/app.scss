@@ -402,13 +402,12 @@ footer {
 
 .socials {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: end;
-    gap: 7px;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
     grid-column: 2 / 3;
     grid-row: 1 / -1;
-    margin-top: 60px;
+    margin-top: 20px;
     margin-right: 23px;
 }
 
@@ -490,6 +489,7 @@ footer {
     text-decoration: none;
     width: fit-content;
     transition: all .3s;
+    margin-bottom: 30px;
 }
 
 // slider
@@ -837,11 +837,6 @@ img {
         grid-column: 3 / 4;
         grid-row: 1 / 2;
         align-self: end;
-    }
-
-    .socials {
-        grid-column: 4 / 5;
-        grid-row: 1 / 4;
     }
 
     .separateurs2 {
