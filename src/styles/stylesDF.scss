@@ -1,0 +1,668 @@
+@import 'utils/variables';
+@import 'components/type';
+
+// fonts
+.shrikhand-regular {
+    font-family: "Shrikhand", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sriracha-regular {
+    font-family: "Sriracha", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    font-family: "Shrikhand", serif;
+    font-size: clamp(2.625rem, 3.462vw + 1.846rem, 6rem);
+    color: var(--color-black);
+    letter-spacing: 2px;
+    line-height: 120%;
+}
+
+h2 {
+    font-family: "Shrikhand", serif;
+    font-size: clamp(2.25rem, 1.795vw + 1.846rem, 4rem);
+    color: var(--color-black);
+    letter-spacing: 2px;
+    line-height: 120%;
+}
+
+h3 {
+    font-family: "Sriracha", cursive;
+    font-size: clamp(2rem, 0.513vw + 1.885rem, 2.5rem);
+    color: var(--color-black);
+}
+
+h4{
+    font-family: "Sriracha", cursive;
+    font-size: clamp(1.75rem, 0.513vw + 1.635rem, 2.25rem);
+}
+
+.menu__li, button, .credits{
+    font-family: "Sriracha", cursive;
+    font-size: clamp(1.75rem, 0.513vw + 1.635rem, 2.25rem);
+}
+
+p, label, li{
+    font-family: "Sriracha", cursive;
+    font-size: clamp(1.125rem, 0.128vw + 1.096rem, 1.25rem);
+    color: var(--color-black);
+}
+
+.editor, input {
+    font-family: "Sriracha", cursive;
+    font-size: clamp(0.875rem, 0.256vw + 0.817rem, 1.125rem);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --color-bg: #F2F6F8;
+    --color-primary: #FF8E31;
+    --color-secondary: #A1BCD0;
+    --color-black: #000;
+    --color-thirdly: #30E1FF;
+    --color-fourthly: #353535;
+}
+
+main {
+    margin: 0 23px;
+}
+
+span {
+    display: block;
+    margin: 12px 0;
+    margin-bottom: 27px;
+}
+
+.menu {
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav__img {
+    height: 40px;
+}
+
+.nav__imgA {
+    height: 40px;
+    padding: 15px 0 15px 23px;
+    z-index: 20;
+}
+
+.menu__ul {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 700px;
+    height: 100%;
+    transform: translateX(1000%);
+    transition: transform .3s ease-out;
+    align-items: start;
+    z-index: 10;
+    padding-top: 100px;
+    padding-left: 23px;
+    gap: 30px;
+}
+
+.menu__li {
+    list-style: none;
+}
+
+.menu__li a {
+    text-decoration: none;
+    color: var(--color-black);
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s;
+    font-size: 20px;
+}
+
+.menu__btn {
+    background-color: transparent;
+    border: none;
+    color: var(--color-black);
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    right: 23px;
+    padding: 0;
+    z-index: 20;
+    transition: all .3s;
+}
+
+.menu__btn:hover, .menu__li a:hover, .lien__site:hover {
+    color: var(--color-thirdly);
+}
+
+.menu--open .menu__ul{
+    transform: translateX(0);
+}
+
+section {
+    margin-top: 50px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.scroll {
+    position: absolute;
+    z-index: 20;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFF4C8;
+    cursor: pointer;
+}
+
+.scroll p {
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+.jump {
+    animation: jump 2s infinite;
+}
+
+@keyframes jump {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px); 
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.section1 {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.section1__div {
+    width: 100%;
+}
+
+.section1__image {
+    width: 100%;
+}
+
+.section1__p {
+    position: relative;
+    z-index: 5;
+    color: var(--color-black);
+    margin: 0 23px;
+}
+
+select {
+    background-color: var(--color-secondary);
+    border: none;
+    border-radius: 5px;
+    padding: 19px 12px;
+    width: 100%;
+}
+
+.entrerFoyer {
+    min-width: fit-content;
+}
+
+input {
+    background-color: var(--color-secondary);
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.donnees {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    opacity: 1;
+}
+
+.donnees__div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rueNumero, .villeCode, .nomPrenom, .paysQuantite {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#rue, #numero {
+    width: 92%;
+}
+
+.submit {
+    transition: all .3s;
+    background-color: var(--color-primary);
+}
+
+.submit:hover {
+    background-color: var(--color-thirdly);
+}
+
+.resultatsRemerciement {
+    display: none;
+}
+
+.div--afficher {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+footer {
+    margin: 30px 0 0;
+    padding: 23px;
+    background-color: var(--color-primary);
+}
+
+.contact {
+    font-family: "Sriracha", cursive;
+    font-size: clamp(1.125rem, 0.128vw + 1.096rem, 1.25rem);
+    text-decoration: none;
+    color: var(--color-black);
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    gap: 10px;
+}
+
+.contact:hover {
+    color: var(--color-thirdly);
+}
+
+.logoHEAJ {
+    width: 60px;
+    filter: brightness(0);
+    transition: all .3s;
+}
+
+.logoHEAJ:hover {
+    filter: none;
+}
+
+.footer__editLogo {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.editor {
+    margin: 0;
+    color: var(--color-black);
+}
+
+.contact__possibles {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.contact__appareil {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.contact__svg {
+    width: 60px;
+    height: auto;
+}
+
+.images__rep {
+    width: 100%;
+}
+
+.credits__img {
+    font-size: 12px;
+    margin: 0;
+}
+
+header {
+    display: grid;
+}
+
+.header__img {
+    width: 100%;
+}
+
+.header__h1 {
+    position: absolute;
+    z-index: 5;
+    color: var(--color-bg);
+    margin-left: 14px;
+}
+
+.header__p {
+    position: absolute;
+    z-index: 5;
+    padding: 0 0 14px 14px;
+    font-size: 12px;
+    margin: 0;
+    color: var(--color-bg);
+    align-self: end;
+}
+
+.lien__site {
+    color: var(--color-fourthly);
+    transition: all .3s;
+}
+
+.scroll {
+    opacity: 0;
+}
+
+.footer__aButton {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.backToTop {
+    transform: rotate(-90deg);
+    background-color: var(--color-thirdly);
+    border-radius: 50px;
+    border: none;
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--color-black);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backToTop:hover{
+    background-color: var(--color-primary);
+}
+
+li::marker {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+ul {
+    padding: 0;
+}
+
+/* VERSION PC/DESKTOP */
+@media (min-width: 1290px) and (max-width: 1920px) {
+    .menu {
+        background-color: var(--color-primary);
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+
+    .menu__btn {
+        display: none;
+    }
+
+    .menu__ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        transform: translateY(0);
+        position: static;
+        height: 100%;
+        padding: 0;
+        background-color: transparent;
+        gap: 80px;
+        margin-left: 100px;
+    }
+
+    .scroll {
+        opacity: 1;
+        position: absolute;
+        z-index: 20;
+        bottom: 16%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    
+    .scroll p {
+        margin: 10px 0 0;
+        padding: 0;
+        color: var(--color-bg);
+        background-color: #00000046;
+        padding: 5px;
+    }
+    
+    .jump {
+        animation: jump 2s infinite;
+    }
+    
+    @keyframes jump {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-15px); 
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+
+    .footer__contact {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    
+    p, ul {
+        max-width: 600px;
+    }
+
+    .section__grid1, .section__grid2, .section__grid3{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section__grid4 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 14%;
+    }
+
+    .section__div1 {
+        width: 80%;
+        justify-self: start;
+        align-self: start;
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        margin-left: 30px;
+    }
+
+    .section__grid1 h2 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: fit-content;
+        justify-self: end;
+        width: fit-content;
+        margin: 0 30px 0 0;
+    }
+
+    .section__grid1 p {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        margin-right: 30px;
+        justify-self: end;
+    }
+
+    .section__div2, .section__div4 {
+        width: 80%;
+        justify-self: end;
+        align-self: center;
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        margin-right: 30px;
+    }
+
+    .section__grid2 h2, .section__grid4 h2 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        height: fit-content;
+        align-self: flex-start;
+        margin: 0 0 0 30px;
+    }
+
+    .section__grid2 p, .section__grid4 p {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        align-self: start;
+        margin: 19px 0 19px 30px;
+    }
+
+    .section__grid2 ul {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+
+    .section__div3 {
+        width: 80%;
+        justify-self: end;
+        align-self: center;
+        grid-column: 1 / 2;
+        grid-row: 1 / 4;
+        margin-right: 30px;
+    }
+
+    .section__grid3 h3 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        margin: 0;
+        margin-left: 30px;
+        height: fit-content;
+    }
+
+    .section__grid3 p {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        margin: 0;
+        margin-left: 30px;
+    }
+
+    .section__grid3 ul {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        padding-left: 30px;
+    }
+
+    .section__gridSites {
+        display: grid;
+        justify-content: center;
+    }
+
+    .section__gridSites p {
+        justify-self: center;
+    }
+
+    .section1__div {
+        width: 100%;
+        justify-self: end;
+        align-self: center;
+    }
+
+    .section1 {
+        display: grid;
+    }
+
+    .section1__image {
+        width: 100%;
+    }
+
+    .section1__p {
+        position: absolute;
+        z-index: 5;
+        color: var(--color-black);
+        margin: 23px 0 0 23px;
+        justify-self: end;
+        margin-right: 20%;
+        background-color: rgb(255 255 255 / 35%);
+        padding: 0 23px;
+        border-radius: 5px;
+    }
+
+    /*Page test*/
+    .rueNumero, .villeCode, .nomPrenom {
+        width: 100%;
+    }
+
+    .donnees__div {
+        width: 100%;
+    }
+
+    #rue, #numero {
+        width: 97%;
+    }
+
+    /*Page contact*/
+    .contact__possibles {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .contact__appareil {
+        width: 50%;
+    }
+
+    .backToTop {
+        margin-bottom: 30px;
+    }
+    
+    .rueNumero, .villeCode, .nomPrenom, .paysQuantite {
+        flex-direction: row;
+    }
+
+}
