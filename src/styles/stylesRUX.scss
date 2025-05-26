@@ -222,7 +222,7 @@ html {
     border-radius: 5px;
 }
 
-.scroll__cs {
+.scroll {
     position: absolute;
     z-index: 20;
     bottom: 0;
@@ -236,7 +236,7 @@ html {
     cursor: pointer;
 }
 
-.scroll__cs p {
+.scroll p {
     margin: 10px 0 0;
     padding: 0;
 }
@@ -531,7 +531,7 @@ content: "";
         padding-top: 100px;
     }
 
-    .scroll__cs {
+    .scroll {
         bottom: 10%;
         transform: translateX(-50%);
     }
@@ -623,7 +623,7 @@ content: "";
         padding-top: 100px;
     }
 
-    .scroll__cs {
+    .scroll {
         bottom: 18%;
         transform: translateX(-50%);
     }

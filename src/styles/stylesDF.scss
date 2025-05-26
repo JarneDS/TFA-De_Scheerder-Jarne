@@ -14,7 +14,7 @@
     font-style: normal;
 }
 
-h1 {
+.header__h1 {
     font-family: "Shrikhand", serif;
     font-size: clamp(2.625rem, 3.462vw + 1.846rem, 6rem);
     color: var(--color-black);
@@ -22,7 +22,7 @@ h1 {
     line-height: 120%;
 }
 
-h2 {
+.h2__df {
     font-family: "Shrikhand", serif;
     font-size: clamp(2.25rem, 1.795vw + 1.846rem, 4rem);
     color: var(--color-black);
@@ -30,18 +30,18 @@ h2 {
     line-height: 120%;
 }
 
-h3 {
+.h3__df {
     font-family: "Sriracha", cursive;
     font-size: clamp(2rem, 0.513vw + 1.885rem, 2.5rem);
     color: var(--color-black);
 }
 
-h4{
+.h4__df{
     font-family: "Sriracha", cursive;
     font-size: clamp(1.75rem, 0.513vw + 1.635rem, 2.25rem);
 }
 
-.menu__li, button, .credits{
+.menu__li__df, button, .credits{
     font-family: "Sriracha", cursive;
     font-size: clamp(1.75rem, 0.513vw + 1.635rem, 2.25rem);
 }
@@ -61,7 +61,7 @@ html {
     scroll-behavior: smooth;
 }
 
-html, body {
+html, .body__df {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -87,7 +87,7 @@ span {
     margin-bottom: 27px;
 }
 
-.menu {
+.menu__df {
     background-color: var(--color-primary);
     display: flex;
     flex-direction: row;
@@ -96,17 +96,17 @@ span {
     align-items: center;
 }
 
-.nav__img {
+.nav__img__df {
     height: 40px;
 }
 
-.nav__imgA {
+.nav__imgA__df {
     height: 40px;
     padding: 15px 0 15px 23px;
     z-index: 20;
 }
 
-.menu__ul {
+.menu__ul__df {
     display: flex;
     flex-direction: column;
     background-color: var(--color-primary);
@@ -116,7 +116,7 @@ span {
     top: 0;
     left: 0;
     width: 100%;
-    max-width: 700px;
+    max-width: 915px;
     height: 100%;
     transform: translateX(1000%);
     transition: transform .3s ease-out;
@@ -127,11 +127,11 @@ span {
     gap: 30px;
 }
 
-.menu__li {
+.menu__li__df {
     list-style: none;
 }
 
-.menu__li a {
+.menu__li__df a {
     text-decoration: none;
     color: var(--color-black);
     display: flex;
@@ -156,11 +156,11 @@ span {
     transition: all .3s;
 }
 
-.menu__btn:hover, .menu__li a:hover, .lien__site:hover {
+.menu__btn:hover, .menu__li__df a:hover, .lien__site:hover {
     color: var(--color-thirdly);
 }
 
-.menu--open .menu__ul{
+.menu--open .menu__ul__df{
     transform: translateX(0);
 }
 
@@ -205,21 +205,21 @@ section {
     }
 }
 
-.section1 {
+.section1__df {
     display: flex;
     flex-direction: column;
     margin: 0;
 }
 
-.section1__div {
+.section1__div__df {
     width: 100%;
 }
 
-.section1__image {
+.section1__image__df {
     width: 100%;
 }
 
-.section1__p {
+.section1__p__df {
     position: relative;
     z-index: 5;
     color: var(--color-black);
@@ -287,7 +287,7 @@ input {
     margin-top: 20px;
 }
 
-footer {
+.footer__df {
     margin: 30px 0 0;
     padding: 23px;
     background-color: var(--color-primary);
@@ -362,7 +362,7 @@ header {
     display: grid;
 }
 
-.header__img {
+.header__img__df {
     width: 100%;
 }
 
@@ -373,7 +373,7 @@ header {
     margin-left: 14px;
 }
 
-.header__p {
+.header__p__df {
     position: absolute;
     z-index: 5;
     padding: 0 0 14px 14px;
@@ -429,7 +429,7 @@ ul {
 
 /* VERSION PC/DESKTOP */
 @media (min-width: 1290px) and (max-width: 1920px) {
-    .menu {
+    .menu__df {
         background-color: var(--color-primary);
         display: flex;
         flex-direction: row;
@@ -442,7 +442,7 @@ ul {
         display: none;
     }
 
-    .menu__ul {
+    .menu__ul__df {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -504,18 +504,18 @@ ul {
         max-width: 600px;
     }
 
-    .section__grid1, .section__grid2, .section__grid3{
+    .section__grid1__df, .section__grid2__df, .section__grid3__df {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .section__grid4 {
+    .section__grid4__df {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 14%;
     }
 
-    .section__div1 {
+    .section__div1__df {
         width: 80%;
         justify-self: start;
         align-self: start;
@@ -524,7 +524,7 @@ ul {
         margin-left: 30px;
     }
 
-    .section__grid1 h2 {
+    .section__grid1__df .h2__df {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
         height: fit-content;
@@ -533,14 +533,14 @@ ul {
         margin: 0 30px 0 0;
     }
 
-    .section__grid1 p {
+    .section__grid1__df p {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
         margin-right: 30px;
         justify-self: end;
     }
 
-    .section__div2, .section__div4 {
+    .section__div2__df, .section__div4__df {
         width: 80%;
         justify-self: end;
         align-self: center;
@@ -549,7 +549,7 @@ ul {
         margin-right: 30px;
     }
 
-    .section__grid2 h2, .section__grid4 h2 {
+    .section__grid2__df .h2__df, .section__grid4__df .h2__df{
         grid-column: 2 / 3;
         grid-row: 1 / 2;
         height: fit-content;
@@ -557,19 +557,19 @@ ul {
         margin: 0 0 0 30px;
     }
 
-    .section__grid2 p, .section__grid4 p {
+    .section__grid2__df p, .section__grid4__df p {
         grid-column: 2 / 3;
         grid-row: 2 / 3;
         align-self: start;
         margin: 19px 0 19px 30px;
     }
 
-    .section__grid2 ul {
+    .section__grid2__df ul {
         grid-column: 2 / 3;
         grid-row: 3 / 4;
     }
 
-    .section__div3 {
+    .section__div3__df {
         width: 80%;
         justify-self: end;
         align-self: center;
@@ -578,7 +578,7 @@ ul {
         margin-right: 30px;
     }
 
-    .section__grid3 h3 {
+    .section__grid3__df .h3__df {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
         margin: 0;
@@ -586,43 +586,43 @@ ul {
         height: fit-content;
     }
 
-    .section__grid3 p {
+    .section__grid3__df p {
         grid-column: 2 / 3;
         grid-row: 2 / 3;
         margin: 0;
         margin-left: 30px;
     }
 
-    .section__grid3 ul {
+    .section__grid3__df ul {
         grid-column: 2 / 3;
         grid-row: 3 / 4;
         padding-left: 30px;
     }
 
-    .section__gridSites {
+    .section__gridSites__df {
         display: grid;
         justify-content: center;
     }
 
-    .section__gridSites p {
+    .section__gridSites__df p {
         justify-self: center;
     }
 
-    .section1__div {
+    .section1__div__df {
         width: 100%;
         justify-self: end;
         align-self: center;
     }
 
-    .section1 {
+    .section1__df {
         display: grid;
     }
 
-    .section1__image {
+    .section1__image__df {
         width: 100%;
     }
 
-    .section1__p {
+    .section1__p__df {
         position: absolute;
         z-index: 5;
         color: var(--color-black);

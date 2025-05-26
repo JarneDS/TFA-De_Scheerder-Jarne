@@ -16,6 +16,9 @@ mix
   .copyDirectory('src/assets', 'dist/assets')
   .js('src/scripts/app.js', 'dist/scripts/')
   .sass('src/styles/app.scss', 'styles/', { sassOptions: { outputStyle: 'expanded' } })
+  .sass('src/styles/stylesDataplay.scss', 'styles/', { sassOptions: { outputStyle: 'expanded' } })
+  .sass('src/styles/stylesDF.scss', 'styles/', { sassOptions: { outputStyle: 'expanded' } })
+  .sass('src/styles/stylesRUX.scss', 'styles/', { sassOptions: { outputStyle: 'expanded' } })
   .options({
     processCssUrls: false,
     autoprefixer: {

@@ -1,42 +1,65 @@
 "use strict";
+if (window.location.pathname.includes("index.html")) {
+    /* Code repris des codes aides fait avec Monsieur Thronte adapté pour le code de mon projet */
+    var btnTheme = document.querySelector(".switch");
 
-/* Code repris des codes aides fait avec Monsieur Thronte adapté pour le code de mon projet */
-/*var btnTheme = document.querySelector(".switch");
+    btnTheme.addEventListener("change", themeSelect);
 
-btnTheme.addEventListener("change", themeSelect);
-
-function themeSelect(){
-    var currentMode = document.body.getAttribute("data-theme");
-    var systemThemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if((!currentMode && systemThemeDark) || currentMode == "dark"){
-        document.body.setAttribute("data-theme", "light");
-        localStorage.setItem("theme", "light");
-    
-    } else{
-        document.body.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
+    function themeSelect(){
+        var currentMode = document.body.getAttribute("data-theme");
+        var systemThemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if((!currentMode && systemThemeDark) || currentMode == "dark"){
+            document.body.setAttribute("data-theme", "light");
+            localStorage.setItem("theme", "light");
+        
+        } else{
+            document.body.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+        }
     }
-}*/
 
-/* code de Copilot pour que quand le thème du browser est dark, que le switch affiche que le mode dark est allumé */
-/* comment est-ce que je peux ajouter le fait que quand la couleur système est dark que le input devient input:checked ? */
-/*var activeTheme = localStorage.getItem("theme");
-if(activeTheme){
-    document.body.setAttribute("data-theme", activeTheme);
-}
+    /* code de Copilot pour que quand le thème du browser est dark, que le switch affiche que le mode dark est allumé */
+    /* comment est-ce que je peux ajouter le fait que quand la couleur système est dark que le input devient input:checked ? */
+    var activeTheme = localStorage.getItem("theme");
+    if(activeTheme){
+        document.body.setAttribute("data-theme", activeTheme);
+    }
 
-var systemThemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-var activeTheme = localStorage.getItem("theme");
-var themeSwitch = document.querySelector(".switch input");
+    var systemThemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var activeTheme = localStorage.getItem("theme");
+    var themeSwitch = document.querySelector(".switch input");
 
-if ((systemThemeDark && !activeTheme) || activeTheme === "dark") {
-    themeSwitch.checked = true;
-} else {
-    themeSwitch.checked = false;
-}*/
+    if ((systemThemeDark && !activeTheme) || activeTheme === "dark") {
+        themeSwitch.checked = true;
+    } else {
+        themeSwitch.checked = false;
+    }
+    /* fin du code repris */
+
+    const btnCredits = document.querySelector(".credits");
+    const btnFermee = document.querySelectorAll(".close");
+    const creditsBlock = document.querySelector(".credits__section");
+
+    btnCredits.addEventListener("click", openCredits);
+    btnFermee.forEach((btn) => {
+        btn.addEventListener("click", closeCredits);
+    });
 
 
-/* fin du code repris */
+    function openCredits() {
+        creditsBlock.classList.add("credits__section--active");
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeCredits() {
+        creditsBlock.classList.remove("credits__section--active");
+        document.body.style.overflow = "";
+    }
+};
 
 /* menu */
 
@@ -52,6 +75,7 @@ function toggleMenu() {
     var menu = document.querySelector(".menu");
     menu.classList.toggle("menu--open");
 };
+
 
 /* Back to top */
 
@@ -87,30 +111,6 @@ if (document.location.href === "index.html") {
     /* fin code provenant de Copilot */
 };
 
-const btnCredits = document.querySelector(".credits");
-const btnFermee = document.querySelectorAll(".close");
-const creditsBlock = document.querySelector(".credits__section");
-
-btnCredits.addEventListener("click", openCredits);
-btnFermee.forEach((btn) => {
-    btn.addEventListener("click", closeCredits);
-});
-
-
-function openCredits() {
-    creditsBlock.classList.add("credits__section--active");
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-    });
-    document.body.style.overflow = "hidden";
-}
-
-function closeCredits() {
-    creditsBlock.classList.remove("credits__section--active");
-    document.body.style.overflow = "";
-}
-
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
@@ -127,121 +127,123 @@ sections.forEach(section => observer.observe(section));
 
 
 /* js RUX et Dataplay */
-// Récupérer les boutons
-var menuBtn = document.querySelector(".menu_btn__cs");
-var rotatableBtn = document.querySelector(".rotatable");
-var retour = document.querySelector(".retour");
+if (window.location.pathname.includes("csDataplay.html") || window.location.pathname.includes("csRUX.html")) {
+    // Récupérer les boutons
+    var menuBtn = document.querySelector(".menu_btn__cs");
+    var rotatableBtn = document.querySelector(".rotatable");
+    var retour = document.querySelector(".retour");
 
-// Ajouter un event listener sur les bouton principaux
-menuBtn.addEventListener("click", toggleMenuCS);
-retour.addEventListener("click", closeSousMenu);
+    // Ajouter un event listener sur les bouton principaux
+    menuBtn.addEventListener("click", toggleMenuCS);
+    retour.addEventListener("click", closeSousMenu);
 
-// Fonction pour toggle le menu principal
-function toggleMenuCS() {
-  var menu = document.querySelector(".menu__cs");
-  menu.classList.toggle("menu--open");
-}
+    // Fonction pour toggle le menu principal
+    function toggleMenuCS() {
+    var menu = document.querySelector(".menu__cs");
+    menu.classList.toggle("menu--open");
+    }
 
-// Ajouter un event listener sur le bouton rotatable
-rotatableBtn.addEventListener("click", toggleSousMenu);
+    // Ajouter un event listener sur le bouton rotatable
+    rotatableBtn.addEventListener("click", toggleSousMenu);
 
-// Fonction pour toggle le sous-menu
-function toggleSousMenu(event) {
-  event.stopPropagation(); // Empêcher la propagation de l'événement pour éviter la fermeture du menu principal
-  var sousMenu = event.target.nextElementSibling;
-  if (sousMenu && sousMenu.classList.contains('sous_menu__cs')) {
-    sousMenu.classList.toggle('sous_menu--open');
-  }
-  const rotateElement = event.target.querySelector('.rotate');
-  if (rotateElement) {
-    rotateElement.classList.toggle('rotated');
-  }
-}
+    // Fonction pour toggle le sous-menu
+    function toggleSousMenu(event) {
+    event.stopPropagation(); // Empêcher la propagation de l'événement pour éviter la fermeture du menu principal
+    var sousMenu = event.target.nextElementSibling;
+    if (sousMenu && sousMenu.classList.contains('sous_menu__cs')) {
+        sousMenu.classList.toggle('sous_menu--open');
+    }
+    const rotateElement = event.target.querySelector('.rotate');
+    if (rotateElement) {
+        rotateElement.classList.toggle('rotated');
+    }
+    }
 
-// Fermer le menu principal et le sous-menu lorsque l'un des liens 'a' est cliqué
-document.querySelectorAll('.menu__cs a, .sous_menu__cs a').forEach(link => {
-  link.addEventListener('click', () => {
-    closeMenus().then(() => {
-      console.log('Menus fermés avec succès');
-    }).catch(error => {
-      console.error('Erreur lors de la fermeture des menus :', error);
+    // Fermer le menu principal et le sous-menu lorsque l'un des liens 'a' est cliqué
+    document.querySelectorAll('.menu__cs a, .sous_menu__cs a').forEach(link => {
+    link.addEventListener('click', () => {
+        closeMenus().then(() => {
+        console.log('Menus fermés avec succès');
+        }).catch(error => {
+        console.error('Erreur lors de la fermeture des menus :', error);
+        });
     });
-  });
-});
+    });
 
-// Fonction pour fermer les menus
-function closeMenus() {
-  return new Promise((resolve, reject) => {
-    try {
-      // Fermer le menu principal
-      var menu = document.querySelector(".menu__cs");
-      menu.classList.remove("menu--open");
+    // Fonction pour fermer les menus
+    function closeMenus() {
+    return new Promise((resolve, reject) => {
+        try {
+        // Fermer le menu principal
+        var menu = document.querySelector(".menu__cs");
+        menu.classList.remove("menu--open");
 
-      // Fermer le sous-menu
-      var sousMenu = document.querySelector('.sous_menu__cs.sous_menu--open');
-      if (sousMenu) {
+        // Fermer le sous-menu
+        var sousMenu = document.querySelector('.sous_menu__cs.sous_menu--open');
+        if (sousMenu) {
+            sousMenu.classList.remove('sous_menu--open');
+            const rotateElement = sousMenu.previousElementSibling.querySelector('.rotate');
+            if (rotateElement) {
+            rotateElement.classList.remove('rotated');
+            }
+        }
+
+        resolve(); // Résoudre la promesse si tout se passe bien
+        } catch (error) {
+        reject(error); // Rejeter la promesse s'il y a une erreur
+        }
+    });
+    }
+
+    function closeSousMenu() {
+    var sousMenu = document.querySelector('.sous_menu__cs.sous_menu--open');
+    if (retour) {
         sousMenu.classList.remove('sous_menu--open');
         const rotateElement = sousMenu.previousElementSibling.querySelector('.rotate');
         if (rotateElement) {
-          rotateElement.classList.remove('rotated');
+        rotateElement.classList.remove('rotated');
         }
-      }
-
-      resolve(); // Résoudre la promesse si tout se passe bien
-    } catch (error) {
-      reject(error); // Rejeter la promesse s'il y a une erreur
     }
-  });
-}
-
-function closeSousMenu() {
-  var sousMenu = document.querySelector('.sous_menu__cs.sous_menu--open');
-  if (retour) {
-    sousMenu.classList.remove('sous_menu--open');
-    const rotateElement = sousMenu.previousElementSibling.querySelector('.rotate');
-    if (rotateElement) {
-      rotateElement.classList.remove('rotated');
     }
-  }
-}
 
 
-// utilisation de copilot + modif personnels pour cette partie
-document.addEventListener('DOMContentLoaded', () => {
-    const slices = document.querySelectorAll('.slice');
-    const data = [30, 45, 25]; // Les valeurs des portions
-    const colors = ['#f44336', '#2196F3', '#4CAF50']; // Les couleurs des portions
+    // utilisation de copilot + modif personnels pour cette partie
+    document.addEventListener('DOMContentLoaded', () => {
+        const slices = document.querySelectorAll('.slice');
+        const data = [30, 45, 25]; // Les valeurs des portions
+        const colors = ['#f44336', '#2196F3', '#4CAF50']; // Les couleurs des portions
 
-    slices.forEach((slice, index) => {
-        slice.style.setProperty('--offset', data.slice(0, index).reduce((acc, val) => acc + val, 0));
-        slice.style.setProperty('--value', data[index]);
-        slice.style.setProperty('--color', colors[index]);
+        slices.forEach((slice, index) => {
+            slice.style.setProperty('--offset', data.slice(0, index).reduce((acc, val) => acc + val, 0));
+            slice.style.setProperty('--value', data[index]);
+            slice.style.setProperty('--color', colors[index]);
+        });
     });
-});
 
 
-document.querySelector('.scroll__cs').addEventListener('click', function() {
-  // Trouver le premier élément <h2>
-  const firstH2 = document.querySelector('.h2__cs');
-  
-  if (firstH2) {
-      // Calculer la position de défilement ajustée
-      const offsetTop = firstH2.getBoundingClientRect().top + window.pageYOffset - 150;
-      
-      // Faire défiler jusqu'à l'élément avec un décalage de 150px
-      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-  }
-});
+    document.querySelector('.scroll').addEventListener('click', function() {
+    // Trouver le premier élément <h2>
+    const firstH2 = document.querySelector('.h2__cs');
+    
+    if (firstH2) {
+        // Calculer la position de défilement ajustée
+        const offsetTop = firstH2.getBoundingClientRect().top + window.pageYOffset - 150;
+        
+        // Faire défiler jusqu'à l'élément avec un décalage de 150px
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    }
+    });
 
-/* Back to top */
+    /* Back to top */
 
-var backToTopButton = document.querySelector(".btt");
+    var backToTopButton = document.querySelector(".btt");
 
-backToTopButton.addEventListener("click", backToTopCS);
+    backToTopButton.addEventListener("click", backToTopCS);
 
-function backToTopCS(){
-    window.scrollTo({ top: 0, behavior: "smooth" });
-}
+    function backToTopCS(){
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+};
 
 /* js DF */
 /* menu */
