@@ -236,7 +236,7 @@ if (window.location.pathname.includes("csDataplay.html") || window.location.path
 // afficher données aide de Copilot pour corriger le code
 if (window.location.pathname.includes("testEnergie.html")) {
     window.onload = function() {
-        fetch('../assets/countries-FR.json')
+        fetch('assets/countries-FR.json')
         .then(response => response.json())
         .then(data => {
             displayPays(data);
