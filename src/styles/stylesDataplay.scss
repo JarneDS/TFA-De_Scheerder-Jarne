@@ -69,7 +69,7 @@ html {
     margin: 0;
 }
 
-.menu__cs {
+.menu {
     position: fixed;
     z-index: 30;
     background-color: var(--color-primary);
@@ -421,7 +421,7 @@ ul, ol {
         top: 160px;
     }
 
-    .menu__cs {
+    .menu {
         height: 100px;
         display: flex;
         align-items: center;
@@ -448,7 +448,7 @@ ul, ol {
         flex-direction: row; 
     }
 
-    .menu__cs a {
+    .menu a {
         font-size: clamp(0.938rem, 0.926vw + 0.764rem, 1.875rem);
         display: flex;
         flex-direction: row;
@@ -525,7 +525,7 @@ ul, ol {
         padding: 0 12px;
     }
 
-    .menu__cs {
+    .menu {
         height: 100px;
         display: flex;
         align-items: center;
@@ -551,7 +551,7 @@ ul, ol {
         flex-direction: row; 
     }
 
-    .menu__cs a {
+    .menu a {
         font-size: 28px;
     }
 

@@ -14,7 +14,7 @@
     font-style: normal;
 }
 
-.header__h1 {
+.header__h1, .h1__df {
     font-family: "Shrikhand", serif;
     font-size: clamp(2.625rem, 3.462vw + 1.846rem, 6rem);
     color: var(--color-black);
@@ -87,7 +87,7 @@ span {
     margin-bottom: 27px;
 }
 
-.menu__df {
+.menu {
     background-color: var(--color-primary);
     display: flex;
     flex-direction: row;
@@ -287,7 +287,7 @@ input {
     margin-top: 20px;
 }
 
-.footer__df {
+.footer__df, .footer__contact {
     margin: 30px 0 0;
     padding: 23px;
     background-color: var(--color-primary);
@@ -429,7 +429,7 @@ ul {
 
 /* VERSION PC/DESKTOP */
 @media (min-width: 1290px) and (max-width: 1920px) {
-    .menu__df {
+    .menu {
         background-color: var(--color-primary);
         display: flex;
         flex-direction: row;

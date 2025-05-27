@@ -156,7 +156,7 @@ if (window.location.pathname.includes("csDataplay.html") || window.location.path
     }
 
     // Fermer le menu principal et le sous-menu lorsque l'un des liens 'a' est cliqué
-    document.querySelectorAll('.menu__cs a, .sous_menu__cs a').forEach(link => {
+    document.querySelectorAll('.menu a, .sous_menu__cs a').forEach(link => {
     link.addEventListener('click', () => {
         closeMenus().then(() => {
         console.log('Menus fermés avec succès');
@@ -171,7 +171,7 @@ if (window.location.pathname.includes("csDataplay.html") || window.location.path
     return new Promise((resolve, reject) => {
         try {
         // Fermer le menu principal
-        var menu = document.querySelector(".menu__cs");
+        var menu = document.querySelector(".menu");
         menu.classList.remove("menu--open");
 
         // Fermer le sous-menu
@@ -232,21 +232,6 @@ if (window.location.pathname.includes("csDataplay.html") || window.location.path
 };
 
 /* js DF */
-/* menu */
-
-/*var menuBtn = document.querySelector(".menu__btn");
-var menuElements = document.querySelectorAll(".menu__li");
-
-menuBtn.addEventListener("click", toggleMenu);
-menuElements.forEach((element) => {
-    element.addEventListener("click", toggleMenu);
-});
-
-function toggleMenu() {
-    var menu = document.querySelector(".menu");
-    menu.classList.toggle("menu--open");
-};*/
-
 // afficher données aide de Copilot pour corriger le code
 if (window.location.pathname.includes("testEnergie.html")) {
     window.onload = function() {
