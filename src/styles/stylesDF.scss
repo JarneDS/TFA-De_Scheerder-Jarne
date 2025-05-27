@@ -181,7 +181,7 @@ section {
     align-items: center;
     justify-content: center;
     color: #FFF4C8;
-    cursor: pointer;
+    cursor: default;
 }
 
 .scroll p {
@@ -466,7 +466,7 @@ ul {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
+        cursor: default;
     }
     
     .scroll p {

@@ -1,7 +1,7 @@
 "use strict";
 const fileName = window.location.pathname.split("/").pop();
 
-if (fileName === "index.html") {
+if (fileName === "index.html" || fileName === "") {
     console.log("This is the index file!");
     /* Code repris des codes aides fait avec Monsieur Thronte adapté pour le code de mon projet */
     var btnTheme = document.querySelector(".switch");
@@ -215,8 +215,9 @@ if (window.location.pathname.includes("csDataplay.html") || window.location.path
             slice.style.setProperty('--color', colors[index]);
         });
     });
+};
 
-
+if (window.location.pathname.includes("csDataplay.html") || window.location.pathname.includes("csRUX.html") || window.location.pathname.includes("designFiction.html")) {
     document.querySelector('.scroll').addEventListener('click', function() {
     // Trouver le premier élément <h2>
     const firstH2 = document.querySelector('.h2__cs');
