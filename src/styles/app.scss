@@ -98,7 +98,7 @@ html, body {
     position: absolute;
     left: 0;
     right: 0;
-    background-image: url(../assets/images/separateur2.png);
+    background-image: url(../assets/images/separateur2.webp);
     background-repeat: no-repeat;
     width: 100%;
     height: 126px;
@@ -121,6 +121,7 @@ html, body {
     top: 50%;
     transform: translateY(-50%);
     z-index: 100;
+    opacity: 0;
 }
 
 .sideNav__elements {
@@ -390,7 +391,7 @@ body{
 
 footer {
     background-color: var(--color-secondary);
-    background-image: url(../assets/images/footer.png);
+    background-image: url(../assets/images/footer.webp);
     background-repeat: no-repeat;
     width: 100%;
     height: 376px;
@@ -651,8 +652,6 @@ img {
 /* code de telegram par t.me/mzcode01 modification pour aller avec mon code */
 .wrapper{
     background-color: transparent;
-    width: 486px;
-    height: 496px;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -790,6 +789,10 @@ img {
 
 /* VERSION TABLETTE */
 @media (min-width: 780px) {
+    .sideNav {
+        opacity: 1;
+    }
+
     p, code {
         width: 440px;
     }
@@ -861,6 +864,7 @@ img {
     }
 
     .orange {
+        padding: 5px;
         width: fit-content;
     }
 

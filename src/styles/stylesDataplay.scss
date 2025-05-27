@@ -237,6 +237,7 @@ html {
     justify-content: center;
     color: var(--color-bg);
     cursor: pointer;
+    opacity: 0;
 }
 
 .scroll p {
@@ -474,6 +475,7 @@ ul, ol {
     }
 
     .scroll {
+        opacity: 1;
         bottom: 10%;
         transform: translateX(-50%);
     }
@@ -574,6 +576,7 @@ ul, ol {
     }
 
     .scroll {
+        opacity: 1;
         bottom: 18%;
         transform: translateX(-50%);
     }
