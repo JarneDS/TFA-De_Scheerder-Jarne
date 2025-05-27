@@ -349,11 +349,11 @@ input {
     height: auto;
 }
 
-.images__rep {
+.images__rep__df {
     width: 100%;
 }
 
-.credits__img {
+.credits__img__df {
     font-size: 12px;
     margin: 0;
 }
@@ -459,7 +459,7 @@ ul {
         opacity: 1;
         position: absolute;
         z-index: 20;
-        bottom: 16%;
+        bottom: 24%;
         left: 50%;
         transform: translateX(-50%);
         display: flex;

@@ -1,5 +1,8 @@
 "use strict";
-if (window.location.pathname.includes("index.html")) {
+const fileName = window.location.pathname.split("/").pop();
+
+if (fileName === "index.html") {
+    console.log("This is the index file!");
     /* Code repris des codes aides fait avec Monsieur Thronte adapté pour le code de mon projet */
     var btnTheme = document.querySelector(".switch");
 
@@ -118,7 +121,8 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             navLinks.forEach(link => link.classList.remove("active"));
-            document.querySelector(`nav a[href="#${entry.target.id}"]`).classList.add("active");
+            document.querySelectorAll(`nav a[href="#${entry.target.id}"]`).forEach(link => link.classList.add("active"));
+
         }
     });
 }, { threshold: 0.5 });
@@ -129,19 +133,11 @@ sections.forEach(section => observer.observe(section));
 /* js RUX et Dataplay */
 if (window.location.pathname.includes("csDataplay.html") || window.location.pathname.includes("csRUX.html")) {
     // Récupérer les boutons
-    var menuBtn = document.querySelector(".menu_btn__cs");
     var rotatableBtn = document.querySelector(".rotatable");
     var retour = document.querySelector(".retour");
 
     // Ajouter un event listener sur les bouton principaux
-    menuBtn.addEventListener("click", toggleMenuCS);
     retour.addEventListener("click", closeSousMenu);
-
-    // Fonction pour toggle le menu principal
-    function toggleMenuCS() {
-    var menu = document.querySelector(".menu__cs");
-    menu.classList.toggle("menu--open");
-    }
 
     // Ajouter un event listener sur le bouton rotatable
     rotatableBtn.addEventListener("click", toggleSousMenu);
@@ -233,16 +229,6 @@ if (window.location.pathname.includes("csDataplay.html") || window.location.path
         window.scrollTo({ top: offsetTop, behavior: 'smooth' });
     }
     });
-
-    /* Back to top */
-
-    var backToTopButton = document.querySelector(".btt");
-
-    backToTopButton.addEventListener("click", backToTopCS);
-
-    function backToTopCS(){
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    }
 };
 
 /* js DF */
@@ -334,7 +320,7 @@ if (window.location.pathname.includes("testEnergie.html")) {
     }
 };
 
-if (window.location.pathname.endsWith("designFictionIndex.html")) {
+if (window.location.pathname.endsWith("designFiction.html")) {
     /* Code provenant de https://www.youtube.com/watch?v=08hkOS9ssmk&t=933s&ab_channel=%C3%89coleduWeb ajusté à mon site */
     const sectionsDF = document.querySelectorAll("section");
 

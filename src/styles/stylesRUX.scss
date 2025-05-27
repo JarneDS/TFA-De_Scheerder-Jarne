@@ -99,7 +99,7 @@ html {
     align-items: center;
 }
 
-.menu_btn__cs {
+.menu__btn {
     background-color: rgba(0, 88, 102, 0.6);
     font-size: clamp(1rem, 0.247vw + 0.954rem, 1.25rem);
     padding: 0;
@@ -130,6 +130,10 @@ html {
 .menu_liste__cs a:hover, .menu_liste__cs a.active {
     color: var(--color-secondary);
     padding: 10px;
+}
+
+.menu__btn:hover {
+    color: var(--color-secondary);
 }
 
 .menu_li__cs{
@@ -299,7 +303,7 @@ span {
     padding-top: 20px;
 }
 
-.btt {
+.backToTop {
     background-color: var(--color-secondary);
     color: var(--color-text);
     display: block;
@@ -319,7 +323,7 @@ span {
     margin-right: 23px;
 }
 
-.btt:hover, .retourPortfolio:hover, .nextCS:hover {
+.backToTop:hover, .retourPortfolio:hover, .nextCS:hover {
     background-color: var(--color-text);
     color: var(--color-bg);
 }
@@ -502,7 +506,7 @@ content: "";
 
     } 
 
-    .menu_btn__cs { 
+    .menu__btn { 
         display: none;
     } 
 
@@ -594,7 +598,7 @@ content: "";
 
     } 
 
-    .menu_btn__cs { 
+    .menu__btn { 
         display: none;
     } 
 
