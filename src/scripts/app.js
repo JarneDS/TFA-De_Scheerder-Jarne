@@ -1,4 +1,11 @@
 "use strict";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
+
+gsap.registerPlugin(ScrollTrigger);
+console.log(gsap.version);
+
 const fileName = window.location.pathname.split("/").pop();
 
 if (fileName === "index.html" || fileName === "") {
@@ -62,6 +69,65 @@ if (fileName === "index.html" || fileName === "") {
         creditsBlock.classList.remove("credits__section--active");
         document.body.style.overflow = "";
     }
+
+    /* Side nav */
+
+    var sideNav = document.querySelector(".sideNav");
+
+    function toggleSideNav() {
+        if (window.innerWidth >= 1250){
+            sideNav.classList.remove("invisible");
+        }
+        else {
+            sideNav.classList.add("invisible");
+        }
+    }
+
+    /* Provient de copilot, discussion dans credits */
+
+    // Run the function on page load to ensure the correct state is set initially
+    toggleSideNav();
+
+    // Listen for window resize events and update visibility accordingly
+    window.addEventListener("resize", toggleSideNav);
+    /* fin code provenant de Copilot */
+
+    gsap.fromTo("#goeiedag", {
+        opacity: 0,
+        y: 500
+    }, {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+        trigger: "#goeiedag",
+        start: "top bottom"
+        },
+        duration: 1
+    });
+
+    const text = new SplitType("h1", { type: "chars" });
+
+    gsap.fromTo(text.chars, {
+    opacity: 0,
+    y: 20
+    }, {
+        opacity: 1,
+        y: 0,
+        stagger: 0.05,
+        duration: 1,
+        ease: "power2.out",
+    });
+
+
+    gsap.fromTo("#bar__h1", {
+        opacity: 0
+    },{
+        opacity: 1,
+        duration: .6,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut"
+    });
 };
 
 /* menu */
@@ -89,30 +155,6 @@ backToTopButton.addEventListener("click", backToTop);
 function backToTop(){
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
-
-if (document.location.href === "index.html") {
-    /* Side nav */
-
-    var sideNav = document.querySelector(".sideNav");
-
-    function toggleSideNav() {
-        if (window.innerWidth >= 1250){
-            sideNav.classList.remove("invisible");
-        }
-        else {
-            sideNav.classList.add("invisible");
-        }
-    }
-
-    /* Provient de copilot, discussion dans credits */
-
-    // Run the function on page load to ensure the correct state is set initially
-    toggleSideNav();
-
-    // Listen for window resize events and update visibility accordingly
-    window.addEventListener("resize", toggleSideNav);
-    /* fin code provenant de Copilot */
-};
 
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
@@ -279,25 +321,25 @@ if (window.location.pathname.includes("testEnergie.html")) {
         var montantValue = parseInt(montantInput.value, 10);
 
         if (montantValue >= 0 && montantValue <= 200) {
-            montant.innerHTML += " trop faible";
+            montant.innerHTML += ' trop faible <img src="assets/images/designFiction/batt_20.svg" alt="batterie à 20%">';
         }
 
         else if (montantValue >= 201 && montantValue <= 400) {
-            montant.innerHTML += " faible.";
+            montant.innerHTML += ' faible <img src="assets/images/designFiction/batt_30.svg" alt="batterie à 30%">';
         }
         else if (montantValue >= 401 && montantValue <= 600) {
-            montant.innerHTML += " moyenne.";
+            montant.innerHTML += ' moyenne <img src="assets/images/designFiction/batt_50.svg" alt="batterie à 50%">';
         }
         else if (montantValue >= 601 && montantValue <= 800) {
-            montant.innerHTML += " bonne.";
+            montant.innerHTML += ' bonne <img src="assets/images/designFiction/batt_60.svg" alt="batterie à 60%">';
         }
 
         else if (montantValue >= 801 && montantValue <= 1000) {
-            montant.innerHTML += " très bonne.";
+            montant.innerHTML += ' très bonne <img src="assets/images/designFiction/batt_80.svg" alt="batterie à 80%">';
         }
 
         else if (montantValue >= 1001) {
-            montant.innerHTML += " incroyable !";
+            montant.innerHTML += ' incroyable ! <img src="assets/images/designFiction/batt_90.svg" alt="batterie à 90%">';
         }
 
         else {
@@ -327,5 +369,17 @@ if (window.location.pathname.endsWith("designFiction.html")) {
 
     sectionsDF.forEach(section => {
         observerDF.observe(section)
+    });
+
+    gsap.fromTo("#loader", {
+        opacity: 1
+    }, {
+        opacity: 0,
+        duration: 2,
+        delay: 1.7,
+        ease: "power2.out",
+        onComplete: () => {
+            document.querySelector("#loader").style.display = "none";
+        }
     });
 };

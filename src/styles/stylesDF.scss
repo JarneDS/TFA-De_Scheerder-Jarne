@@ -14,6 +14,28 @@
     font-style: normal;
 }
 
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-primary);
+    color: var(--color-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    z-index: 1000;
+}
+
+.loader__elements {
+    display: flex;
+    display: block;
+    flex-direction: row;
+    text-align: center;
+}
+
 .header__h1, .h1__df {
     font-family: "Shrikhand", serif;
     font-size: clamp(2.625rem, 3.462vw + 1.846rem, 6rem);
@@ -355,7 +377,8 @@ input {
 
 .credits__img__df {
     font-size: 12px;
-    margin: 0;
+    margin: 0 !important; // ajout de !important pour éviter que le chevauchement de tous les .section__grid... p
+    justify-self: start !important; // même raison que juste avant
 }
 
 header {
@@ -425,6 +448,12 @@ li::marker {
 
 ul {
     padding: 0;
+}
+
+#montant {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 /* VERSION PC/DESKTOP */

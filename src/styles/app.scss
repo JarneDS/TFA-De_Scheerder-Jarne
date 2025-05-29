@@ -22,6 +22,18 @@ h1 {
     line-height: 100%;
 }
 
+/* provient de copilot pour que le texte ne se mette pas sur une ligne lors de l'animation */
+h1 span {
+    display: block !important;
+}
+/* fin */
+
+#souris {
+    width: 2px;
+    height: 19px;
+    background-color: #000;
+}
+
 h2 {
     margin: 0;
     font-family: "Shrikhand", serif;
@@ -600,6 +612,7 @@ input:checked + .slider:before {
     position: relative;
     height: 90vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     //margin-top: 180px;
