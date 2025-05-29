@@ -8,7 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 const fileName = window.location.pathname.split("/").pop();
 
 if (fileName === "index.html" || fileName === "") {
-    console.log("This is the index file!");
     /* Code repris des codes aides fait avec Monsieur Thronte adapté pour le code de mon projet */
     var btnTheme = document.querySelector(".switch");
 
