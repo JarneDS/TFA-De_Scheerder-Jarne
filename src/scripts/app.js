@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
 gsap.registerPlugin(ScrollTrigger);
-console.log(gsap.version);
 
 const fileName = window.location.pathname.split("/").pop();
 
