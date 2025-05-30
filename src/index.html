@@ -316,6 +316,58 @@
             <span>max-width: 300px;</span>
         <span>}</span>
       </code>
+      <h3>GSAP questions</h3>
+      <code>  
+        <span>gsap.utils.toArray('#goeiedag', goeiedag){</span>
+        <span>gsap.fromTo(goeiedag,{</span> <span>opacity: 0,</span>
+        <span>y: 100</span>
+        <span>},{</span>
+        <span>opacity: 1,</span>
+        <span>y: 0,</span>
+        <span>scrollTrigger: goeiedag</span>
+        <span>})</span>
+        <span>};</span>
+      </code>
+      <p>It looks like you're trying to animate an element with GSAP, but there are a couple of issues in your code. Here’s a fixed version:</p>
+      <code>
+        <span>gsap.utils.toArray("#goeiedag").forEach(goeiedag => {</span>
+        <span>gsap.fromTo(goeiedag, {</span>
+        <span>opacity: 0,</span>
+        <span>y: 100</span>
+        <span>}, {</span>
+        <span>opacity: 1,</span>
+        <span>y: 0,</span>
+        <span>scrollTrigger: {</span>
+        <span>trigger: goeiedag,</span>
+        <span>start: "top bottom"</span>
+        <span>}</span>
+        <span>});</span>
+        <span>});</span>
+      </code>
+      <h4>Issues in your code:</h4>
+      <ol>
+        <li>Incorrect toArray usage: gsap.utils.toArray(selector) returns an array, but you were trying to pass an additional argument.</li>
+        <li>No forEach iteration: Since toArray returns an array, you need to loop through each element to apply animations individually.</li>
+        <li>scrollTrigger setup: The object needs a trigger property to correctly bind the animation to scroll events.</li>
+      </ol>
+      <p>This should work as expected, animating #goeiedag smoothly when it enters the viewport. Let me know if you need any refinements! 🚀</p>
+      <p>how to make it work even if I only have one element with that ID ?</p>
+      <p>If you only have a single element with that ID, you don’t necessarily need gsap.utils.toArray(). You can target the element directly like this:</p>
+      <code>
+        <span>gsap.fromTo("#goeiedag", {</span>
+        <span>opacity: 0,</span>
+        <span>y: 100</span>
+        <span>}, {</span>
+        <span>opacity: 1,</span>
+        <span>y: 0,</span>
+        <span>scrollTrigger: {</span>
+        <span>trigger: "#goeiedag",</span>
+        <span>start: "top bottom"</span>
+        <span>}</span>
+        <span>});</span>
+      </code>
+      <p><span>This ensures that the animation still works correctly without iterating over an array. GSAP will directly target #goeiedag and apply the animation when the element enters the viewport.</span> <span>Let me know if you need more tweaks! 🚀</span></p>
+      <code><span>const file = { name: window.location.pathname.split("/").pop() }; // Dynamically set name</span></code>
       <button class="close">Fermer</button>
     </section>
   </main>
