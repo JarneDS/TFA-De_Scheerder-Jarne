@@ -764,6 +764,8 @@ img {
 }
 
 .button__savoirPlus {
+    font-family: "Sriracha", cursive;
+    font-size: clamp(1rem, 0.128vw + 0.971rem, 1.125rem);
     background-color: var(--color-secondary);
     border-radius: 70px;
     width: fit-content;
@@ -771,6 +773,8 @@ img {
     padding: 14px;
     transition: all .3s;
     cursor: pointer;
+    text-decoration: none;
+    color: var(--color-text);
 }
 
 .button__savoirPlus:hover, .button__savoirPlusFiction:hover, .backToTop:hover {
@@ -779,6 +783,8 @@ img {
 }
 
 .button__savoirPlusFiction {
+    font-family: "Sriracha", cursive;
+    font-size: clamp(1rem, 0.128vw + 0.971rem, 1.125rem);
     background-color: var(--color-thirdly);
     border-radius: 70px;
     width: fit-content;
@@ -786,6 +792,8 @@ img {
     padding: 14px;
     transition: all .3s;
     cursor: pointer;
+    text-decoration: none;
+    color: var(--color-text);
 }
 
 #designFiction {
@@ -798,6 +806,10 @@ img {
 
 .designFiction__text {
     margin: 50px 0;
+}
+
+.designFiction__text p {
+    margin-bottom: 34px;
 }
 
 /* VERSION TABLETTE */

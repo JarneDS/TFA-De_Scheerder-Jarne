@@ -320,7 +320,7 @@ span {
     margin-right: 23px;
 }
 
-.backToTop:hover, .retourPortfolio:hover, .nextCS:hover {
+.backToTop:hover, .retourPortfolio:hover, .nextCS:hover, .projetDataplay:hover {
     background-color: var(--color-text);
     color: var(--color-bg);
 }
@@ -334,7 +334,7 @@ span {
     gap: 23px;
 }
 
-.retourPortfolio, .nextCS {
+.retourPortfolio, .nextCS, .projetDataplay {
     background-color: var(--color-secondary);
     color: var(--color-text);
     padding: 12px;
@@ -343,6 +343,8 @@ span {
     transition: all .3s;
     font-family: "Volkhov", serif;
     cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 .heaj{
